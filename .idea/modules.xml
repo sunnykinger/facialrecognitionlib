@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Android-Face-Recognition-with-Deep-Learning-Library.iml" filepath="$PROJECT_DIR$/Android-Face-Recognition-with-Deep-Learning-Library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/facerecognitionlibrary/facerecognitionlibrary.iml" filepath="$PROJECT_DIR$/facerecognitionlibrary/facerecognitionlibrary.iml" />
+    </modules>
+  </component>
+</project>
