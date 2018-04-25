@@ -25,9 +25,6 @@ import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.Rect;
-import org.opencv.imgcodecs.Imgcodecs;
-import org.opencv.imgproc.Imgproc;
-import org.opencv.utils.Converters;
 
 import java.util.List;
 
@@ -35,6 +32,7 @@ import ch.zhaw.facerecognitionlibrary.Helpers.Eyes;
 import ch.zhaw.facerecognitionlibrary.Helpers.FaceDetection;
 import ch.zhaw.facerecognitionlibrary.Helpers.MatOperation;
 import ch.zhaw.facerecognitionlibrary.Helpers.PreferencesHelper;
+
 
 public class PreProcessor {
     private Context context;
@@ -45,21 +43,21 @@ public class PreProcessor {
     private Eyes[] eyes;
     private FaceDetection faceDetection;
 
-    public Context getContext(){
-        return context;
-    }
-
-    public PreProcessor(FaceDetection faceDetection, List<Mat> images, Context context){
+    public PreProcessor(FaceDetection faceDetection, List<Mat> images, Context context) {
         this.faceDetection = faceDetection;
         this.images = images;
         this.context = context;
+    }
+
+    public Context getContext() {
+        return context;
     }
 
     public void setFaces(PreProcessorFactory.PreprocessingMode preprocessingMode) {
         List<Mat> images = getImages();
 
         PreferencesHelper preferencesHelper = new PreferencesHelper(context);
-        if (preferencesHelper.getDetectionMethod()){
+        if (preferencesHelper.getDetectionMethod()) {
             faces = faceDetection.getFaces(images.get(0));
             angle = faceDetection.getAngle();
         } else {
@@ -68,9 +66,9 @@ public class PreProcessor {
             Bitmap bmp = Bitmap.createBitmap(img.cols(), img.rows(), Bitmap.Config.RGB_565);
             Utils.matToBitmap(img, bmp);
             FaceDetector.Face[] facesAndroid = new FaceDetector.Face[1];
-            if (faceDetector.findFaces(bmp, facesAndroid) > 0){
+            if (faceDetector.findFaces(bmp, facesAndroid) > 0) {
                 faces = new Rect[facesAndroid.length];
-                for (int i=0; i<facesAndroid.length; i++){
+                for (int i = 0; i < facesAndroid.length; i++) {
                     PointF pointF = new PointF();
                     facesAndroid[i].getMidPoint(pointF);
                     int xWidth = (int) (1.34 * facesAndroid[i].eyesDistance());
@@ -82,7 +80,7 @@ public class PreProcessor {
             }
         }
 
-        if (preprocessingMode == PreProcessorFactory.PreprocessingMode.RECOGNITION && preferencesHelper.getDetectionMethod()){
+        if (preprocessingMode == PreProcessorFactory.PreprocessingMode.RECOGNITION && preferencesHelper.getDetectionMethod()) {
             // Change the image rotation to the angle where the face was detected
             images.remove(0);
             images.add(faceDetection.getImg());
@@ -90,14 +88,10 @@ public class PreProcessor {
         }
     }
 
-    public void setFaces(Rect[] faces){
-        this.faces = faces;
-    }
-
     public Eyes[] setEyes() {
         List<Mat> images = getImages();
         eyes = new Eyes[images.size()];
-        for (int i=0; i<images.size(); i++){
+        for (int i = 0; i < images.size(); i++) {
             Mat img = images.get(i);
             normalize0255(img);
             eyes[i] = faceDetection.getEyes(img);
@@ -113,11 +107,17 @@ public class PreProcessor {
         return faces;
     }
 
-    public int getAngle() { return angle; }
+    public void setFaces(Rect[] faces) {
+        this.faces = faces;
+    }
+
+    public int getAngle() {
+        return angle;
+    }
 
     public void setAngle(int angle) {
         this.angle = angle;
-        for (Mat img : images){
+        for (Mat img : images) {
             MatOperation.rotate_90n(img, angle);
         }
     }
@@ -126,19 +126,19 @@ public class PreProcessor {
         return img;
     }
 
-    public void setImages(List<Mat> images) {
-        this.images = images;
+    public void setImg(Mat img) {
+        this.img = img;
     }
 
     public List<Mat> getImages() {
         return images;
     }
 
-    public void setImg(Mat img) {
-        this.img = img;
+    public void setImages(List<Mat> images) {
+        this.images = images;
     }
 
-    public void normalize0255(Mat norm){
+    public void normalize0255(Mat norm) {
         Core.normalize(norm, norm, 0, 255, Core.NORM_MINMAX, CvType.CV_8UC1);
     }
 }
