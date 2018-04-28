@@ -96,7 +96,7 @@ public class MatOperation {
         int r = (color >> 16) & 0xFF;
         int g = (color >> 8) & 0xFF;
         int b = (color >> 0) & 0xFF;
-        Point tl = drawRectangleOnPreview(img, face, front_camera);
+        Point tl = drawRectangleOnPreview(img, face, front_camera, color);
         Imgproc.putText(img, label, tl, Core.FONT_HERSHEY_PLAIN, FONT_SIZE, scalar, THICKNESS);
     }
 
