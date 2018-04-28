@@ -15,6 +15,8 @@ limitations under the License.
 
 package ch.zhaw.facerecognitionlibrary.Helpers;
 
+import android.graphics.Color;
+
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
@@ -66,6 +68,36 @@ public class MatOperation {
     public static void drawRectangleAndLabelOnPreview(Mat img, Rect face, String label, boolean front_camera) {
         Point tl = drawRectangleOnPreview(img, face, front_camera);
         Imgproc.putText(img, label, tl, Core.FONT_HERSHEY_PLAIN, FONT_SIZE, FACE_RECT_COLOR, THICKNESS);
+    }
+
+
+    public static Point drawRectangleOnPreview(Mat img, Rect face, boolean front_camera, int color) {
+        int red = Color.red(color);
+        int green = Color.green(color);
+        int blue = Color.blue(color);
+        int alpha = Color.alpha(color);
+        Scalar scalar = new Scalar(red, green, blue, alpha);
+        if (front_camera) {
+            Rect mirroredFace = getMirroredFaceForFrontCamera(img, face);
+            Imgproc.rectangle(img, mirroredFace.tl(), mirroredFace.br(), scalar, THICKNESS);
+            return mirroredFace.tl();
+        } else {
+            Imgproc.rectangle(img, face.tl(), face.br(), scalar, THICKNESS);
+            return face.tl();
+        }
+    }
+
+    public static void drawRectangleAndLabelOnPreview(Mat img, Rect face, String label, boolean front_camera, int color) {
+        int red = Color.red(color);
+        int green = Color.green(color);
+        int blue = Color.blue(color);
+        int alpha = Color.alpha(color);
+        Scalar scalar = new Scalar(red, green, blue, alpha);
+        int r = (color >> 16) & 0xFF;
+        int g = (color >> 8) & 0xFF;
+        int b = (color >> 0) & 0xFF;
+        Point tl = drawRectangleOnPreview(img, face, front_camera);
+        Imgproc.putText(img, label, tl, Core.FONT_HERSHEY_PLAIN, FONT_SIZE, scalar, THICKNESS);
     }
 
     public static Rect[] rotateFaces(Mat img, Rect[] faces, int angle) {
