@@ -52,6 +52,14 @@ public class CustomCameraView extends JavaCameraView {
 
     }
 
+    public float getMaximumExposure() {
+        return params != null ? params.getMaxExposureCompensation() : 0;
+    }
+
+    public float getMinimumExposure() {
+        return params != null ? params.getMinExposureCompensation() : 0;
+    }
+
 
     public void setDisplayOrientation(int angle) {
         Method downPolymorphic;
