@@ -44,13 +44,12 @@ public class PreProcessorFactory {
     private Context context;
     private PreferencesHelper preferencesHelper;
     private Resources resources;
-
-    ;
     private PreProcessor preProcessorRecognition;
     private PreProcessor preProcessorDetection;
     private List<Mat> images;
     private FaceDetection faceDetection;
     private boolean eyeDetectionEnabled;
+
     public PreProcessorFactory(Context context) {
         this.context = context;
         this.faceDetection = new FaceDetection(context);

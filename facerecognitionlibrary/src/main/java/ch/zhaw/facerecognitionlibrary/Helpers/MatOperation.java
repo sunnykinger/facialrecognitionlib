@@ -28,7 +28,7 @@ import org.opencv.imgproc.Imgproc;
 public class MatOperation {
     private static final Scalar FACE_RECT_COLOR = new Scalar(0, 255, 0, 255);
     private static final int FONT_SIZE = 3;
-    private static final int THICKNESS = 1;
+    private static final int THICKNESS = 3;
 
     /***************************************************************************************
      *    Title: Rotate image by 90, 180 or 270 degrees
