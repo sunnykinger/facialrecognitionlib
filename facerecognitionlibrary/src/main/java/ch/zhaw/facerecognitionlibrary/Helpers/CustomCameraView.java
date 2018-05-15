@@ -6,7 +6,6 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.Toast;
 
-import org.opencv.android.JavaCameraView;
 
 import java.lang.reflect.Method;
 import java.util.List;
