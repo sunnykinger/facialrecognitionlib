@@ -6,21 +6,24 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.Toast;
 
-import org.opencv.android.JavaCameraView;
-
 import java.lang.reflect.Method;
 import java.util.List;
 
 
 public class CustomCameraView extends JavaCameraView {
     private Camera.Parameters params;
-
+    private int mExposure;
 
     public CustomCameraView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
+    public int getExposure() {
+        return mExposure;
+    }
+
     public void setExposure(int exposure) {
+        this.mExposure = exposure;
         params = mCamera.getParameters();
         float minEx = params.getMinExposureCompensation();
         float maxEx = params.getMaxExposureCompensation();
@@ -50,14 +53,6 @@ public class CustomCameraView extends JavaCameraView {
             Toast.makeText(getContext(), "The selected camera doesn't support Night Portrait Mode", Toast.LENGTH_SHORT).show();
         }
 
-    }
-
-    public float getMaximumExposure() {
-        return params != null ? params.getMaxExposureCompensation() : 0;
-    }
-
-    public float getMinimumExposure() {
-        return params != null ? params.getMinExposureCompensation() : 0;
     }
 
 

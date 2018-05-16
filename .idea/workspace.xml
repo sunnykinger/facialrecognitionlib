@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a697d576-9011-49bd-8c58-544416116dac" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/facerecognitionlibrary/build.gradle" afterPath="$PROJECT_DIR$/facerecognitionlibrary/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/facerecognitionlibrary/src/main/java/ch/zhaw/facerecognitionlibrary/Helpers/MatOperation.java" afterPath="$PROJECT_DIR$/facerecognitionlibrary/src/main/java/ch/zhaw/facerecognitionlibrary/Helpers/MatOperation.java" />
-      <change beforePath="$PROJECT_DIR$/facerecognitionlibrary/src/main/java/ch/zhaw/facerecognitionlibrary/PreProcessor/PreProcessorFactory.java" afterPath="$PROJECT_DIR$/facerecognitionlibrary/src/main/java/ch/zhaw/facerecognitionlibrary/PreProcessor/PreProcessorFactory.java" />
+      <change beforePath="$PROJECT_DIR$/facerecognitionlibrary/src/main/java/ch/zhaw/facerecognitionlibrary/Helpers/CustomCameraView.java" afterPath="$PROJECT_DIR$/facerecognitionlibrary/src/main/java/ch/zhaw/facerecognitionlibrary/Helpers/CustomCameraView.java" />
+      <change beforePath="$PROJECT_DIR$/facerecognitionlibrary/src/main/java/ch/zhaw/facerecognitionlibrary/Helpers/JavaCameraView.java" afterPath="$PROJECT_DIR$/facerecognitionlibrary/src/main/java/ch/zhaw/facerecognitionlibrary/Helpers/JavaCameraView.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,6 +30,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
@@ -1987,10 +1989,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/facerecognitionlibrary/src/main/java/ch/zhaw/facerecognitionlibrary/Helpers/CustomCameraView.java" />
         <option value="$PROJECT_DIR$/facerecognitionlibrary/src/main/java/ch/zhaw/facerecognitionlibrary/PreProcessor/PreProcessorFactory.java" />
         <option value="$PROJECT_DIR$/facerecognitionlibrary/build.gradle" />
         <option value="$PROJECT_DIR$/facerecognitionlibrary/src/main/java/ch/zhaw/facerecognitionlibrary/Helpers/MatOperation.java" />
+        <option value="$PROJECT_DIR$/facerecognitionlibrary/src/main/java/ch/zhaw/facerecognitionlibrary/Helpers/CameraBridgeViewBase.java" />
+        <option value="$PROJECT_DIR$/facerecognitionlibrary/src/main/java/ch/zhaw/facerecognitionlibrary/Helpers/CustomCameraView.java" />
+        <option value="$PROJECT_DIR$/facerecognitionlibrary/src/main/java/ch/zhaw/facerecognitionlibrary/Helpers/JavaCameraView.java" />
       </list>
     </option>
   </component>
@@ -2015,9 +2019,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2048,6 +2052,13 @@
               <item name="facerecognitionlibrary" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="facerecognitionlibrary" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Preferences" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Android-Face-Recognition-with-Deep-Learning-Library" type="1abcf292:AndroidViewProjectNode" />
+              <item name="facerecognitionlibrary" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="facerecognitionlibrary" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="PreProcessor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -2065,7 +2076,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2073,6 +2084,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="android.project.structure.last.selected" value="facerecognitionlibrary" />
     <property name="android.project.structure.proportion" value="0.15" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\AndroidStudioProjects\QuelemsLibrary\Android-Face-Recognition-with-Deep-Learning-Library\facerecognitionlibrary\src\main\java\ch\zhaw\facerecognitionlibrary\Helpers" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -2202,7 +2218,7 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2221,7 +2237,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
