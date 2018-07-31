@@ -31,7 +31,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:support-v4:27.1.1'
-    implementation 'ch.zhaw:opencv:3.2.0'
+    implementation 'ch.zhaw:opencv:3.2.0' 
     implementation 'org.tensorflow:tensorflow-android:1.8.0-rc0'
 }
 

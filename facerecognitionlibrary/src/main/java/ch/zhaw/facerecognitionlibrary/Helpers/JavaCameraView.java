@@ -21,6 +21,8 @@ import org.opencv.imgproc.Imgproc;
 
 import java.util.List;
 
+import static android.hardware.Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO;
+
 /**
  * This class is an implementation of the Bridge View between OpenCV and Java Camera.
  * This class relays on the functionality available in base class and only implements
@@ -126,7 +128,7 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
             /* Now set camera parameters */
             try {
                 Camera.Parameters params = mCamera.getParameters();
-
+                params.setFocusMode(FOCUS_MODE_CONTINUOUS_VIDEO);
                 Log.d(TAG, "getSupportedPreviewSizes()");
                 List<Camera.Size> sizes = params.getSupportedPreviewSizes();
 
@@ -147,8 +149,8 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
                         params.setRecordingHint(true);
 
                     List<String> FocusModes = params.getSupportedFocusModes();
-                    if (FocusModes != null && FocusModes.contains(Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO)) {
-                        params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO);
+                    if (FocusModes != null && FocusModes.contains(FOCUS_MODE_CONTINUOUS_VIDEO)) {
+                        params.setFocusMode(FOCUS_MODE_CONTINUOUS_VIDEO);
                     }
 
                     mCamera.setParameters(params);
