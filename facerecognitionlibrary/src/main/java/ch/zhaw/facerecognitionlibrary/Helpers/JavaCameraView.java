@@ -21,6 +21,7 @@ import org.opencv.imgproc.Imgproc;
 
 import java.util.List;
 
+import static android.hardware.Camera.Parameters.FOCUS_MODE_AUTO;
 import static android.hardware.Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO;
 
 /**
@@ -128,7 +129,7 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
             /* Now set camera parameters */
             try {
                 Camera.Parameters params = mCamera.getParameters();
-                params.setFocusMode(FOCUS_MODE_CONTINUOUS_VIDEO);
+                params.setFocusMode(FOCUS_MODE_AUTO);
                 Log.d(TAG, "getSupportedPreviewSizes()");
                 List<Camera.Size> sizes = params.getSupportedPreviewSizes();
 
